@@ -32,14 +32,14 @@ program untar;
 uses Unix;
 
 const
-MAX_ARCS=8;
+MAX_ARCS=9;
 a : array[0..MAX_ARCS] of string = ('application/x-tar',
 'application/x-gzip','application/x-bzip2','application/x-lzip',
-'application/x-xz','application/zstd','application/x-lzma','application/x-lzop','application/x-7z-compressed');
+'application/x-xz','application/zstd','application/x-lzma','application/x-lzop','application/x-7z-compressed','application/zip');
 
 a2 : array[0..MAX_ARCS] of string = ('POSIX tar archive (GNU)',
 'gzip compressed data','bzip2 compressed data','lzip compressed data',
-'XZ compressed data','Zstandard compressed data','LZMA compressed data','lzop compressed data','7-zip archive data');
+'XZ compressed data','Zstandard compressed data','LZMA compressed data','lzop compressed data','7-zip archive data','Zip archive data');
 
 var
 f, i : LongInt;
@@ -84,6 +84,7 @@ end else begin
        6: s := 'unlzma -k -f ' + ParamStr(f);
        7: s := 'lzop -d -f ' + ParamStr(f);
        8: s := '7z x ' + ParamStr(f);
+       9: s := 'unzip ' + ParamStr(f);
   end;
 end; {end if}
 end; {end if}
