@@ -1,4 +1,6 @@
 # untar
 AutoUntar archives.
 
-Project have new place: https://gitflic.ru/project/alexander2023/untar
+Project have new places:
+1. https://codeberg.org/Alexander2024/untar
+2. https://gitflic.ru/project/alexander2023/untar
